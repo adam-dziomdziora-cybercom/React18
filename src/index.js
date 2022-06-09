@@ -1,10 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import { HelloWorld } from './hello-world.jsx';
 
-import './style/main.scss';
-
-const HelloWorld = () => {
-  return <h1 className="header">Hello World!</h1>;
-};
-
-ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(<HelloWorld />);

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "npm run lint && npm run format && webpack --mode production",
+    "build": "npm run lint && npm run format && webpack --mode production -d source-map",
     "lint": "npx eslint --fix \"src/**/*.{js,jsx}\"",
     "format": "npx prettier --write \"src/**/*.{js,jsx,ts,tsx,html,css,scss}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -37,7 +37,7 @@
     "@babel/preset-react": "^7.17.12",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
-    "eslint": "^7.32.0",
+    "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-prettier": "^4.0.0",

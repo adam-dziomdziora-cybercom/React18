@@ -1,9 +1,15 @@
 const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map',
-  plugins: [new ESLintPlugin()],
+  plugins: [
+    new ESLintPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve('./index.html'),
+    }),
+  ],
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -19,6 +25,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.(s|)css$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },

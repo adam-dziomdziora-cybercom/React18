@@ -9,9 +9,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production",
-    "lint": "npx eslint --fix \"src/**/*.js\"",
-    "format": "npx prettier --write \"**/*.{js,jsx,ts,tsx,html,css,scss}\"",
+    "build": "npm run lint && npm run format && webpack --mode production",
+    "lint": "npx eslint --fix \"src/**/*.{js,jsx}\"",
+    "format": "npx prettier --write \"src/**/*.{js,jsx,ts,tsx,html,css,scss}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/adam-dziomdziora-cybercom/React18#readme",
   "dependencies": {
+    "html-webpack-plugin": "^5.5.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
@@ -35,6 +36,7 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react": "^1.1.7",
@@ -43,6 +45,9 @@
     "eslint-webpack-plugin": "^3.1.1",
     "path": "^0.12.7",
     "prettier": "^2.6.2",
+    "sass": "^1.52.3",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.2"

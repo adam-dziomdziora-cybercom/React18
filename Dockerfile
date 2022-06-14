@@ -9,12 +9,8 @@ WORKDIR /usr/local/app
 # Add the source code to app
 COPY ./ /usr/local/app/
 
-# Install all the dependencies
-RUN npm install
-
-# Generate the build of the application
-RUN npm run build
-
+# Install all the dependencies and Generate the build of the application
+RUN npm install && npm run build
 
 # Stage 2: Serve app with nginx server
 

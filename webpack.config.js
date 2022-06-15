@@ -4,6 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map',
+  performance: {
+    maxEntrypointSize: 4000000,
+    maxAssetSize: 2000000,
+  },
   plugins: [
     new ESLintPlugin(),
     new HtmlWebpackPlugin({

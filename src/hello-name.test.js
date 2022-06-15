@@ -21,7 +21,7 @@ afterEach(() => {
 
 it('renders Hello with name', () => {
   act(() => {
-    createRoot(container).render(<HelloName name="Adam" />);
+    createRoot(container).render(<HelloName name="Adam" myClassName="" />);
   });
   expect(container.textContent).toBe('Hello, Adam!');
   expect(container.firstChild).not.toHaveClass();

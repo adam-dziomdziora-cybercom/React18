@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import { HelloWorld } from './hello-world.jsx';
 import { HelloName } from './hello-name.jsx';
+import { HelloBootstrap } from './hello-bootstrap.jsx';
+
+import './style/main.scss';
 
 const htmlElement = document.getElementById('root');
 const reactRoot = ReactDOM.createRoot(htmlElement);
@@ -51,5 +55,11 @@ reactRoot.render(
         'Span in Div 1'
       )
     )}
+    <HelloBootstrap
+      btnFn1={() => alert('Button 1 clicked')}
+      btnFn2={() => alert("You clicked 2'nd button")}
+      btnTxt1="my Super Btn 1"
+      btnTxt2="and btn 2 here"
+    />
   </React.Fragment>
 );

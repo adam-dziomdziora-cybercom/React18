@@ -1,65 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { HelloWorld } from './hello-world.jsx';
-import { HelloName } from './hello-name.jsx';
-import { HelloBootstrap } from './hello-bootstrap.jsx';
+import { HelloStuff } from './hello-stuff.jsx';
 
 import './style/main.scss';
 
 const htmlElement = document.getElementById('root');
 const reactRoot = ReactDOM.createRoot(htmlElement);
 reactRoot.render(
-  <React.Fragment>
-    <HelloWorld />
-    <HelloWorld myClassName="blue-header" />
-    <HelloWorld myClassName="yellow-transparent-header" />
-    <HelloName name="adam" myClassName="blue-header" />
+  <>
+    <HelloStuff />
     {React.createElement(
-      'span',
-      {
-        className: 'header',
-        style: {
-          fontSize: 'xx-large',
-          fontStyle: 'oblique',
-          color: 'yellow',
-          fontVariant: 'small-caps',
-        },
-      },
-      'Hi there I love CSS!'
+      'h3',
+      { id: 'mojeh2', className: 'header' },
+      'Playing with react is cool'
     )}
     {React.createElement(
-      HelloName,
-      { myClassName: 'yellow-transparent-header', name: 'John' },
-      null
-    )}
-    {React.createElement(
-      'div',
-      { id: 'mySuperDiv' },
-      <HelloName myClassName="yellow-transparent-header" name="Margareth" />
-    )}
-    {React.createElement(
-      'div',
-      { style: { border: '1rem dashed violet' } },
+      'ul',
+      { id: 'fajnalistaReactowa' },
+
       React.createElement(
-        'span',
-        {
-          className: 'blue-header',
-          style: {
-            fontSize: 'xx-large',
-            fontStyle: 'oblique',
-            color: 'red',
-            fontVariant: 'small-caps',
-          },
-        },
-        'Span in Div 1'
+        'li',
+        { id: 'item1', className: 'blue-header' },
+        'item 1 \u26CF;'
+      ),
+      <li id="item2" className="header">
+        item 2 hi &#x25ee;
+      </li>,
+      React.createElement(
+        'li',
+        { id: 'item3', className: 'yellow-transparent-header' },
+        'item 3 \u26CD;'
       )
     )}
-    <HelloBootstrap
-      btnFn1={() => alert('Button 1 clicked')}
-      btnFn2={() => alert("You clicked 2'nd button")}
-      btnTxt1="my Super Btn 1"
-      btnTxt2="and btn 2 here"
-    />
-  </React.Fragment>
+  </>
 );

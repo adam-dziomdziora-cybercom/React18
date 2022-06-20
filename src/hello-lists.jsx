@@ -12,11 +12,11 @@ export const HelloLists = () => {
     generateRandomIntegerInRange(minValue, maxValue),
     generateRandomIntegerInRange(minValue, maxValue),
     generateRandomIntegerInRange(minValue, maxValue),
-  ].map((singleValue) => (
+  ].map((singleValue, index) => (
     <li
-      key={singleValue}
+      key={index}
       className="list-group-item"
-    >{`tutaj jest string polaczony ze zmienna ${singleValue}`}</li>
+    >{`my value is: ${singleValue} but I have the ${index} index`}</li>
   ));
 
   const myList = (

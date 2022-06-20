@@ -9,8 +9,8 @@ import './style/main.scss';
 const htmlElement = document.getElementById('root');
 const reactRoot = ReactDOM.createRoot(htmlElement);
 reactRoot.render(
-  <>
+  <React.StrictMode>
     <HelloStuff />
     <HelloLists />
-  </>
+  </React.StrictMode>
 );

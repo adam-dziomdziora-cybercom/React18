@@ -14,7 +14,7 @@ module.exports = {
       template: path.resolve('./index.html'),
     }),
   ],
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',

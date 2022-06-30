@@ -3,6 +3,9 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   devtool: 'eval-source-map',
   performance: {
     maxEntrypointSize: 4000000,
@@ -12,9 +15,10 @@ module.exports = {
     new ESLintPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve('./index.html'),
+      favicon: path.resolve('./favicon.png'),
     }),
   ],
-  entry: './src/index.jsx',
+  entry: './src/index',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',

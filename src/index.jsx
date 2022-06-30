@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HelloLists } from './hello-lists.jsx';
+import { HelloLists } from './hello-lists';
 
-import { HelloStuff } from './hello-stuff.jsx';
-import { ListWithInput } from './list-with-input.jsx';
+import { HelloStuff } from './hello-stuff';
+import { ListWithInput } from './list-with-input';
 
 import './style/main.scss';
 

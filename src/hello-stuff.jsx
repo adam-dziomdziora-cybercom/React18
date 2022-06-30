@@ -1,7 +1,7 @@
 import React from 'react';
-import { HelloWorld } from './hello-world.jsx';
-import { HelloName } from './hello-name.jsx';
-import { HelloBootstrap } from './hello-bootstrap.jsx';
+import { HelloWorld } from './hello-world';
+import { HelloName } from './hello-name';
+import { HelloBootstrap } from './hello-bootstrap';
 
 export const HelloStuff = () => {
   return (

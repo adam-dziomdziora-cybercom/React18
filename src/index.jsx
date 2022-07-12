@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import ListFibonacci from './list-fibonacci';
 import { HelloLists } from './hello-lists';
 
 import { HelloStuff } from './hello-stuff';
@@ -33,5 +34,6 @@ reactRoot.render(
     <ListPure id="myListPure" />
     <ListPure id="myListPure2" valueIWantToSee="another secret" />
     <ListPureNames />
+    <ListFibonacci updatedLog="A to jest przekazana wiadomość!" />
   </React.StrictMode>
 );

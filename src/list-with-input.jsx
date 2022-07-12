@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Col, ListGroupItem } from 'react-bootstrap';
 
 const MyUL = styled.ul`
   background: palevioletred;
@@ -17,9 +18,9 @@ export const ListWithInput = (props) => {
       {props.listItem}
 
       {props.valueIWantToSee && props.valueIWantToSee.length > 0 && (
-        <li className="list-group-item list-group-item-success col-6">
+        <ListGroupItem variant="primary" as={Col}>
           OK there is your content: {props.valueIWantToSee}
-        </li>
+        </ListGroupItem>
       )}
     </MyUL>
   );

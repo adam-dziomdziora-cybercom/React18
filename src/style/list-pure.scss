@@ -21,6 +21,10 @@
   max-inline-size: 30ch;
 }
 
+code {
+  color: white;
+}
+
 @media (max-width: 780px) {
   .text-shadow {
     font-size: 1rem;

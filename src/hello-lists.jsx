@@ -1,4 +1,5 @@
 import React from 'react';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 export const generateRandomIntegerInRange = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -13,17 +14,12 @@ export const HelloLists = () => {
     generateRandomIntegerInRange(minValue, maxValue),
     generateRandomIntegerInRange(minValue, maxValue),
   ].map((singleValue, index) => (
-    <li
+    <ListGroupItem
       key={index}
-      className="list-group-item"
-    >{`my value is: ${singleValue} but I have the ${index} index`}</li>
+    >{`my value is: ${singleValue} but I have the ${index} index`}</ListGroupItem>
   ));
 
-  const myList = (
-    <ul id={myId} className="list-group">
-      {listItems}
-    </ul>
-  );
+  const myList = <ListGroup id={myId}>{listItems}</ListGroup>;
 
   return (
     <React.Fragment>
@@ -38,15 +34,18 @@ export const HelloLists = () => {
 
         React.createElement(
           'li',
-          { id: 'item1', className: 'blue-header' },
+          { id: 'item1', className: 'list-group-item blue-header' },
           'item 1 \u26CF;'
         ),
-        <li id="item2" className="header">
+        <ListGroupItem id="item2" className="header">
           item 2 hi &#x25ee;
-        </li>,
+        </ListGroupItem>,
         React.createElement(
           'li',
-          { id: 'item3', className: 'yellow-transparent-header' },
+          {
+            id: 'item3',
+            className: 'list-group-item yellow-transparent-header',
+          },
           'item 3 \u26CD;'
         )
       )}

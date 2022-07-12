@@ -57,10 +57,10 @@ class ListPureNames extends React.PureComponent {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         {this.renderNames()}
         <Button onClick={this.doStuff}>add person</Button>
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -23,11 +23,11 @@ class ListFibonacci extends React.PureComponent {
   render() {
     const { date, items } = this.state;
     return (
-      <>
+      <React.Fragment>
         <p>{date}</p>
         <p> {items.map((item) => `${item}, `)}</p>
         <Button onClick={this.updateItems}>lets update!</Button>
-      </>
+      </React.Fragment>
     );
   }
 }

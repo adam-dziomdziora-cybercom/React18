@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { generateRandomIntegerInRange } from './hello-lists';
 
 import './style/list-pure.scss';
-import { Button } from 'react-bootstrap';
+import { Button, ListGroup } from 'react-bootstrap';
 
 class ListPure extends React.PureComponent {
   constructor(props) {
@@ -40,7 +40,7 @@ class ListPure extends React.PureComponent {
     console.log(`I am redenering here list ${id}! ${valueIWantToSee}`);
     return (
       <div id={id} className="listPure">
-        <ul>
+        <ListGroup>
           My list with Id: {id} has state
           <p className="text-shadow"> {this.renderMyItems()}</p>
           {valueIWantToSee && valueIWantToSee.length > 0 && (
@@ -49,7 +49,7 @@ class ListPure extends React.PureComponent {
               <span className="text-secret">{valueIWantToSee}</span>
             </p>
           )}
-        </ul>
+        </ListGroup>
 
         <Button onClick={this.doStuff}>click and do stuff</Button>
         <Button variant="secondary" onClick={this.doNothing}>

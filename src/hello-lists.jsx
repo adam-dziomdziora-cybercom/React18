@@ -1,6 +1,6 @@
 import React from 'react';
 
-const generateRandomIntegerInRange = (min, max) => {
+export const generateRandomIntegerInRange = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 

@@ -4,6 +4,7 @@ import { HelloLists } from './hello-lists';
 
 import { HelloStuff } from './hello-stuff';
 import ListPure from './list-pure';
+import ListPureNames from './list-pure-names';
 import { ListWithInput } from './list-with-input';
 
 import './style/main.scss';
@@ -31,5 +32,6 @@ reactRoot.render(
     />
     <ListPure id="myListPure" />
     <ListPure id="myListPure2" valueIWantToSee="another secret" />
+    <ListPureNames />
   </React.StrictMode>
 );

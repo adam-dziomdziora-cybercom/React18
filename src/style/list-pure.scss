@@ -38,3 +38,26 @@
   padding: 2vmin;
   max-inline-size: 10ch;
 }
+
+.centered-row {
+  text-align: center;
+  align-items: center;
+}
+
+.text-man {
+  color: rgba(170, 34, 221, 0.783);
+  font-family: 'Comic Sans Ms', cursive;
+}
+
+.text-woman {
+  color: rgba(12, 178, 121, 0.783);
+  font-family: 'Comic Sans Ms', cursive;
+}
+
+.text-name {
+  text-shadow: 0.1em 0.1em 0 hsl(200 50% 30%);
+  font-size: 1rem;
+  font-weight: 200;
+  color: rgba(170, 234, 21, 0.783);
+  font-family: 'Comic Sans Ms', cursive;
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { generateRandomIntegerInRange } from './hello-lists';
 import { Button, Col, ListGroup, ListGroupItem, Row } from 'react-bootstrap';
-import maleNames from './data/names-male.json';
-import femaleNames from './data/names-female.json';
-import './style/list-pure.scss';
+import maleNames from '../data/names-male.json';
+import femaleNames from '../data/names-female.json';
+import './list-pure.scss';
 
 class ListPureNames extends React.PureComponent {
   constructor(props) {

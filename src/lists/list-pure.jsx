@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { generateRandomIntegerInRange } from './hello-lists';
 
-import './style/list-pure.scss';
+import './list-pure.scss';
 import { Button, ListGroup } from 'react-bootstrap';
 
 class ListPure extends React.PureComponent {

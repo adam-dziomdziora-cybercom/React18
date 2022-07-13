@@ -4,11 +4,12 @@ import { generateRandomIntegerInRange } from './hello-lists';
 
 import './list-pure.scss';
 import { Button, ListGroup } from 'react-bootstrap';
+import { List } from 'immutable';
 
 class ListPure extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { myItems: [1, 1, 2, 3, 5, 8] };
+    this.state = { myItems: List([1, 1, 2, 3, 5, 8]) };
     // this.doStuff = this.doStuff.bind(this); // replaced with labda syntax
     this.doNothing = this.doNothing.bind(this);
   }
@@ -23,8 +24,8 @@ class ListPure extends React.PureComponent {
   doStuff = () => {
     const { myItems } = this.state;
     const randomValue = generateRandomIntegerInRange(150, 510);
-    const lastItemIncreased = myItems[myItems.length - 1] + randomValue;
-    const newMyItems = [...myItems, lastItemIncreased];
+    const lastItemIncreased = myItems.get(myItems.size - 1) + randomValue;
+    const newMyItems = myItems.push(lastItemIncreased);
     this.setState({ myItems: newMyItems });
   };
 

@@ -31,7 +31,7 @@ class ListPureNames extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      myNames: [{ sex: 'man', name: 'Adam' }],
+      myNames: List([{ sex: 'man', name: 'Adam' }]),
     };
   }
   componentDidMount() {
@@ -56,7 +56,7 @@ class ListPureNames extends React.PureComponent {
       ? maleNamesList.get(randomIndex)
       : femaleNamesList.get(randomIndex);
     const newNameInList = { sex: isMale ? 'man' : 'woman', name: randomName };
-    const myNames = [...myNamesFromState, newNameInList];
+    const myNames = myNamesFromState.push(newNameInList);
     this.setState({ myNames });
   };
 

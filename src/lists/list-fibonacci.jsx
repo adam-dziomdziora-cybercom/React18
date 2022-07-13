@@ -1,3 +1,4 @@
+import { List } from 'immutable';
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import withLogger from './with-logger';
@@ -7,15 +8,15 @@ class ListFibonacci extends React.PureComponent {
     super(props);
     this.state = {
       date: `Last updateted at ${new Date().toLocaleTimeString()}`,
-      items: [1, 1],
+      items: List([1, 1]),
     };
   }
 
   updateItems = () => {
     const { items: itemsState } = this.state;
     const newValue =
-      itemsState[itemsState.length - 1] + itemsState[itemsState.length - 2];
-    const items = [...itemsState, newValue];
+      itemsState.get(itemsState.size - 1) + itemsState.get(itemsState.size - 2);
+    const items = itemsState.push(newValue);
     const date = `Last updateted at ${new Date().toLocaleTimeString()}, inserted value ${newValue}`;
     this.setState({ date, items });
   };

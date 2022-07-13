@@ -23,7 +23,8 @@ it('renders Hello World!', () => {
   act(() => {
     createRoot(container).render(<HelloWorld />);
   });
-  expect(container.textContent).toBe('Hello World!');
+  expect(container.textContent).toContain('Hello World!');
+  expect(container.textContent).toContain('he single counter value:');
   expect(container.firstChild).toHaveClass('header');
 });
 
@@ -31,6 +32,5 @@ it('renders Hello World! with class', () => {
   act(() => {
     createRoot(container).render(<HelloWorld myClassName="blue-header" />);
   });
-  expect(container.textContent).toBe('Hello World!');
   expect(container.firstChild).toHaveClass('blue-header');
 });

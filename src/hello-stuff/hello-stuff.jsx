@@ -1,5 +1,5 @@
 import React from 'react';
-import HelloWorld from './hello-world';
+import HelloWorld from '../hello-world';
 import { HelloName } from './hello-name';
 import { HelloBootstrap } from './hello-bootstrap';
 

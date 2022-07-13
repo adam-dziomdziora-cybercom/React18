@@ -11,3 +11,5 @@ export const HelloWorld = (props) => {
 HelloWorld.propTypes = {
   myClassName: PropTypes.string,
 };
+
+export default HelloWorld;

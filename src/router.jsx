@@ -1,35 +1,26 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from 'react-router-dom';
-import { MyNavbar } from './navbar';
-import Welcome from './welcome';
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MyLoader } from './my-loader';
 
-function NoMatch() {
-  const location = useLocation();
-  return (
-    <div className="text-shadow">
-      <h3>
-        No match for <code>{location.pathname}</code>
-      </h3>
-    </div>
-  );
-}
+const Home = lazy(() => import('./home'));
+const Welcome = lazy(() => import('./welcome'));
+const MyNavbar = lazy(() => import('./navbar'));
+const NoMatch = lazy(() => import('./no-match'));
 
 export const MyRouter = () => {
   const routes = (
     <Routes>
-      <Route path="/" element={<Welcome />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/welcome" element={<Welcome />} />
       <Route path="*" element={<NoMatch />} />
     </Routes>
   );
   return (
     <Router>
-      <MyNavbar />
-      {routes}
+      <Suspense fallback={<MyLoader />}>
+        <MyNavbar />
+        {routes}
+      </Suspense>
     </Router>
   );
 };

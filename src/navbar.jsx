@@ -1,25 +1,36 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavLink } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-export const MyNavbar = () => {
+const MyNavbar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+        <Link className="navbar-brand" to="/">
+          React-Bootstrap
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/link">Link</NavLink>
+            <Link className="nav-link" to="/welcome">
+              Welcome
+            </Link>
+            <Link className="nav-link" to="/link">
+              Link
+            </Link>
           </Nav>
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             Signed in as:
-            <NavLink href="/login">Mark Otto</NavLink>
+            <Link className="nav-link" to="/login">
+              Mark Otto
+            </Link>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 };
+
+export default MyNavbar;

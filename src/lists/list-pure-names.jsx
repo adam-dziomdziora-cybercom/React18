@@ -38,22 +38,19 @@ class ListPureNames extends React.PureComponent {
     console.log('sprawdzam czy są imiona');
     if (this.props.names.get('namesMale').size === 0) {
       console.log('ustawiam listę męską');
-      this.props.handleSetNamesMale(maleNames);
+      this.props.handleSetNamesMale(maleNames.data);
     }
     if (this.props.names.get('namesFemale').size === 0) {
-      this.props.handleSetNamesFemale(femaleNames);
+      this.props.handleSetNamesFemale(femaleNames.data);
     }
   }
 
   doStuff = () => {
     const { myNames: myNamesFromState } = this.state;
     const { names } = this.props;
-    const maleNamesList = names.getIn(['namesMale', 'data'], List());
-    const femaleNamesList = names.getIn(['namesFemale', 'data'], List());
-    const randomIndex = generateRandomIntegerInRange(
-      0,
-      maleNamesList.length - 1
-    );
+    const maleNamesList = names.get('namesMale', List());
+    const femaleNamesList = names.get('namesFemale', List());
+    const randomIndex = generateRandomIntegerInRange(0, maleNamesList.size - 1);
     const isMale = generateRandomIntegerInRange(0, 1) === 0;
     const randomName = isMale
       ? maleNamesList[randomIndex]

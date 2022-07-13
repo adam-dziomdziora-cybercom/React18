@@ -9,12 +9,12 @@ const INITIAL_STATE = Map({
 const namesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case TYPES.SET_NAMES_MALE: {
-      const newNamesMale = action.namesMale;
+      const newNamesMale = List(action.namesMale);
       const newState = state.set('namesMale', newNamesMale);
       return newState;
     }
     case TYPES.SET_NAMES_FEMALE: {
-      const newNamesFemale = action.namesFemale;
+      const newNamesFemale = List(action.namesFemale);
       const newState = state.set('namesFemale', newNamesFemale);
       return newState;
     }

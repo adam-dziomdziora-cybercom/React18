@@ -2,31 +2,54 @@ import React from 'react';
 import { generateRandomIntegerInRange } from './hello-lists';
 import { Button, Col, ListGroup, ListGroupItem, Row } from 'react-bootstrap';
 import maleNames from '../data/names-male.json';
+import { connect } from 'react-redux';
 import femaleNames from '../data/names-female.json';
 import './list-pure.scss';
+import { TYPES } from '../redux/actions/names.actions';
+import ImmutablePropTypes from 'react-immutable-proptypes';
+import PropTypes from 'prop-types';
+import { List } from 'immutable';
+
+const mapStateToProps = (state) => {
+  return {
+    names: state.names,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleSetNamesFemale: (namesFemale) => {
+      dispatch({ type: TYPES.SET_NAMES_FEMALE, namesFemale });
+    },
+    handleSetNamesMale: (namesMale) => {
+      dispatch({ type: TYPES.SET_NAMES_MALE, namesMale });
+    },
+  };
+};
 
 class ListPureNames extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       myNames: [{ sex: 'man', name: 'Adam' }],
-      maleNamesList: [],
-      femaleNamesList: [],
     };
   }
   componentDidMount() {
-    this.setState({
-      maleNamesList: maleNames.data,
-      femaleNamesList: femaleNames.data,
-    });
+    console.log('sprawdzam czy są imiona');
+    if (this.props.names.get('namesMale').size === 0) {
+      console.log('ustawiam listę męską');
+      this.props.handleSetNamesMale(maleNames);
+    }
+    if (this.props.names.get('namesFemale').size === 0) {
+      this.props.handleSetNamesFemale(femaleNames);
+    }
   }
 
   doStuff = () => {
-    const {
-      myNames: myNamesFromState,
-      maleNamesList,
-      femaleNamesList,
-    } = this.state;
+    const { myNames: myNamesFromState } = this.state;
+    const { names } = this.props;
+    const maleNamesList = names.getIn(['namesMale', 'data'], List());
+    const femaleNamesList = names.getIn(['namesFemale', 'data'], List());
     const randomIndex = generateRandomIntegerInRange(
       0,
       maleNamesList.length - 1
@@ -65,4 +88,10 @@ class ListPureNames extends React.PureComponent {
   }
 }
 
-export default ListPureNames;
+ListPureNames.propTypes = {
+  names: ImmutablePropTypes.map.isRequired,
+  handleSetNamesFemale: PropTypes.func.isRequired,
+  handleSetNamesMale: PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListPureNames);

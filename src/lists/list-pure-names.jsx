@@ -53,8 +53,8 @@ class ListPureNames extends React.PureComponent {
     const randomIndex = generateRandomIntegerInRange(0, maleNamesList.size - 1);
     const isMale = generateRandomIntegerInRange(0, 1) === 0;
     const randomName = isMale
-      ? maleNamesList[randomIndex]
-      : femaleNamesList[randomIndex];
+      ? maleNamesList.get(randomIndex)
+      : femaleNamesList.get(randomIndex);
     const newNameInList = { sex: isMale ? 'man' : 'woman', name: randomName };
     const myNames = [...myNamesFromState, newNameInList];
     this.setState({ myNames });

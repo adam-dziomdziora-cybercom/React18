@@ -6,7 +6,7 @@ export const HelloBootstrap = (props) => {
   const { btnFn1, btnFn2, btnTxt1, btnTxt2 } = props;
   return (
     <Row className="mx-0">
-      <Button as={Col} variant="primary" onClick={btnFn1}>
+      <Button as={Col} variant="primary" className="mx-2" onClick={btnFn1}>
         {btnTxt1}
       </Button>
       <Button as={Col} variant="secondary" className="mx-2" onClick={btnFn2}>

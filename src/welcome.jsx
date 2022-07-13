@@ -6,13 +6,14 @@ import { HelloStuff } from './hello-stuff';
 import ListPure from './list-pure';
 import ListPureNames from './list-pure-names';
 import { ListWithInput } from './list-with-input';
-import { ListGroupItem } from 'react-bootstrap';
+import { Col, ListGroupItem } from 'react-bootstrap';
 
 const listItem = (
   <ListGroupItem
-    onClick={() => {
-      alert('Hi!');
-    }}
+    action
+    variant="secondary"
+    as={Col}
+    onClick={() => alert('Hi!')}
   >
     hi there!
   </ListGroupItem>

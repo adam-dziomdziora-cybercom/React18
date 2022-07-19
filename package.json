@@ -28,7 +28,7 @@
   "homepage": "https://github.com/adam-dziomdziora-cybercom/React18#readme",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
-    "bootstrap": "^5.1.3",
+    "bootstrap": "^5.2.0",
     "html-webpack-plugin": "^5.5.0",
     "immutable": "^4.1.0",
     "react": "^18.2.0",

@@ -50,7 +50,7 @@
     "babel-jest": "^29.0.1",
     "babel-loader": "^8.2.5",
     "browserslist": "^4.21.2",
-    "caniuse-lite": "^1.0.30001385",
+    "caniuse-lite": "^1.0.30001397",
     "css-loader": "^6.7.1",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
